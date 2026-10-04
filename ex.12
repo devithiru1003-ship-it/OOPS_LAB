@@ -1,0 +1,100 @@
+import java.util.Scanner;
+
+class RailwayReservation {
+    int trainNo;
+    String passengerName;
+    int seats;
+
+    RailwayReservation(int trainNo, String passengerName, int seats) {
+        this.trainNo = trainNo;
+        this.passengerName = passengerName;
+        this.seats = seats;
+    }
+
+    void bookTicket() {
+        System.out.println("Ticket Booked Successfully");
+    }
+
+    void cancelTicket() {
+        System.out.println("Ticket Cancelled Successfully");
+    }
+
+    void display() {
+        System.out.println("\n----- Reservation Details -----");
+        System.out.println("Train Number   : " + trainNo);
+        System.out.println("Passenger Name : " + passengerName);
+        System.out.println("Seats Booked   : " + seats);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        RailwayReservation r =
+            new RailwayReservation(12635, "Devisri", 2);
+
+        int choice;
+
+        do {
+            System.out.println("\n=== RAILWAY RESERVATION SYSTEM ===");
+            System.out.println("1. Book Ticket");
+            System.out.println("2. Cancel Ticket");
+            System.out.println("3. Display Details");
+            System.out.println("4. Exit");
+            System.out.print("Enter Choice: ");
+
+            choice = sc.nextInt();
+
+            switch(choice) {
+                case 1:
+                    r.bookTicket();
+                    break;
+
+                case 2:
+                    r.cancelTicket();
+                    break;
+
+                case 3:
+                    r.display();
+                    break;
+
+                case 4:
+                    System.out.println("Thank You");
+                    break;
+
+                default:
+                    System.out.println("Invalid Choice");
+            }
+        } while(choice != 4);
+
+        sc.close();
+    }
+}
+
+
+Output 
+
+     === RAILWAY RESERVATION SYSTEM ===
+1. Book Ticket
+2. Cancel Ticket
+3. Display Details
+4. Exit
+Enter Choice: 1
+
+Ticket Booked Successfully
+
+=== RAILWAY RESERVATION SYSTEM ===
+1. Book Ticket
+2. Cancel Ticket
+3. Display Details
+4. Exit
+Enter Choice: 3
+
+----- Reservation Details -----
+Train Number   : 12635
+Passenger Name : Devisri
+Seats Booked   : 2
+
+=== RAILWAY RESERVATION SYSTEM ===
+Enter Choice: 4
+
+Thank You
